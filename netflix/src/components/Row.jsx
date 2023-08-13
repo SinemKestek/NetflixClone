@@ -13,17 +13,17 @@ const Row = ({title,fetchURL,rowID}) => {
     })
    },[fetchURL])
 
- console.log(movies)
+//  console.log(movies)
 
-//   const  slideLeft=()=>{
-//     var slider=document.getElementById('slider' +rowID);
-//     slider.scrollLeft=slider.scrollLeft-500;
-//     console.log("leftarrow")
-//   }
-//   const  slideRight=()=>{
-//     var slider=document.getElementById('slider'+rowID); 
-//     slider.scrollRight=slider.scrollRight+500;
-//   }
+  const  slideLeft=()=>{
+    var slider=document.getElementById('slider' +rowID);
+    slider.scrollLeft=slider.scrollLeft-500;
+    console.log("leftarrow")
+  }
+  const  slideRight=()=>{
+    var slider=document.getElementById('slider'+rowID); 
+    slider.scrollRight=slider.scrollRight+500;
+  }
 
 
 
@@ -31,8 +31,8 @@ const Row = ({title,fetchURL,rowID}) => {
   return (
     <>
     <h2 className='text-white font-bold md:text-xl p-4'>{title} </h2>
-    <div className="relative flex items-center"> 
-    <MdChevronLeft  className='bg-gray-400 rounded-full opacity-50 hover:opacity-100 z-10 absolute left-0 ' size={30}/>
+    <div className="relative flex items-center group"> 
+    <MdChevronLeft  className='bg-gray-400 rounded-full opacity-50 hover:opacity-100 z-10 absolute left-0 hidden group-hover:block ' size={30}/>
 
      <div  id={'slider'} className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
         {movies.map((item,id)=>(
@@ -40,7 +40,7 @@ const Row = ({title,fetchURL,rowID}) => {
         ))}
 
      </div>
-     <MdChevronRight  className='bg-gray-500 rounded-full opacity-50 hover:opacity-100 z-10 absolute right-0 ' size={30}/>
+     <MdChevronRight  className='bg-gray-500 rounded-full opacity-50 hover:opacity-100 z-10 absolute right-0 hidden group-hover:block ' size={30}/>
         </div>
     
     
